@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../GameBot/.idea/GameBot.iml" filepath="$PROJECT_DIR$/../GameBot/.idea/GameBot.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/aiai.iml" filepath="$PROJECT_DIR$/.idea/aiai.iml" />
     </modules>
   </component>

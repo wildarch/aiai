@@ -47,4 +47,9 @@ images = list(map(img_from_path, test_files))
 test_data = list(zip(get_data_from_images(images), map(color_to_test_repr, colors)))
 
 network = Network([img_width*img_width, 12, 3])
-network.SGD(training_data, 30, 10, 3.0, test_data=test_data)
+network.SGD(training_data, 30, 10, 3)
+for file, output, input in zip(test_files, network.evaluate(test_data), test_data):
+    if(output == 0):
+        print("File {0} failed detection".format(file))
+        raw_out = network.feedforward(input[0])
+        print("Output was {0}. Should be {1}".format(raw_out, input[1]))
