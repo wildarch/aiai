@@ -115,7 +115,10 @@ class Network(object):
             sp = sigmoid_prime(z)
             delta = np.dot(self.weights[-l+1].transpose(), delta) * sp
             nabla_b[-l] = delta
+            print("Delta shape: "+str(np.shape(delta)))
+            print("Activations: {0}".format(np.shape(activations[-l-1])))
             nabla_w[-l] = np.dot(delta, activations[-l-1].transpose())
+            print("NablaW: {0}".format(np.shape(nabla_w[-l])))
         return (nabla_b, nabla_w)
 
     def evaluate(self, test_data):
